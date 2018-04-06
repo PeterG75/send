@@ -74,7 +74,7 @@ jobs:
           paths:
             - .tox
       - save_cache:
-          key: uitest-cache-{{ checksum "pipfile.txt" }}
+          key: uitest-cache-{{ checksum "pipenv.txt" }}
           paths:
             - .tox
   deploy_dev:
