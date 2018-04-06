@@ -208,6 +208,7 @@ module.exports = {
   ],
   devServer: {
     compress: true,
+    public: 'send.firefox.local',
     host: '0.0.0.0',
     before: IS_DEV ? require('./server/dev') : undefined
   }
