@@ -9,25 +9,25 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
 
-@pytest.fixture
-def firefox_options(firefox_options, download_location_dir):
-    """Firefox options."""
-    firefox_options.set_preference(
-        'extensions.install.requireBuiltInCerts', False)
-    firefox_options.set_preference('xpinstall.signatures.required', False)
-    firefox_options.set_preference('extensions.webapi.testing', True)
-    firefox_options.set_preference('ui.popup.disable_autohide', True)
-    firefox_options.set_preference("browser.download.panel.shown", False)
-    firefox_options.set_preference(
-        "browser.helperApps.neverAsk.openFile", "text/plain")
-    firefox_options.set_preference(
-        "browser.helperApps.neverAsk.saveToDisk", "text/plain")
-    firefox_options.set_preference("browser.download.folderList", 2)
-    firefox_options.set_preference(
-        "browser.download.dir", "{0}".format(download_location_dir))
-    firefox_options.add_argument('-foreground')
-    firefox_options.log.level = 'trace'
-    return firefox_options
+# @pytest.fixture
+# def firefox_options(firefox_options, download_location_dir):
+#     """Firefox options."""
+#     firefox_options.set_preference(
+#         'extensions.install.requireBuiltInCerts', False)
+#     firefox_options.set_preference('xpinstall.signatures.required', False)
+#     firefox_options.set_preference('extensions.webapi.testing', True)
+#     firefox_options.set_preference('ui.popup.disable_autohide', True)
+#     firefox_options.set_preference("browser.download.panel.shown", False)
+#     firefox_options.set_preference(
+#         "browser.helperApps.neverAsk.openFile", "text/plain")
+#     firefox_options.set_preference(
+#         "browser.helperApps.neverAsk.saveToDisk", "text/plain")
+#     firefox_options.set_preference("browser.download.folderList", 2)
+#     firefox_options.set_preference(
+#         "browser.download.dir", "{0}".format(download_location_dir))
+#     firefox_options.add_argument('-foreground')
+#     firefox_options.log.level = 'trace'
+#     return firefox_options
 
 
 @pytest.fixture(scope='session', autouse=True)
